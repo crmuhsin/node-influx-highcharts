@@ -13,20 +13,21 @@ const fetchData = async (asset) => {
   }
 }
 
-const fetchAllLocations = async (cont, asset) => {
+const makeChart = async (container, asset, title) => {
   try {
-    return Highcharts.chart(cont, {
+    return Highcharts.chart(container, {
 
       chart: {
         type: 'gauge',
         plotBackgroundColor: null,
         plotBackgroundImage: null,
         plotBorderWidth: 0,
-        plotShadow: false
+        plotShadow: false,
+        backgroundColor: '#000000'
       },
 
       title: {
-        text: asset
+        text: title
       },
 
       pane: {
@@ -83,7 +84,7 @@ const fetchAllLocations = async (cont, asset) => {
           rotation: 'auto'
         },
         title: {
-          text: 'km/h'
+          text: '%'
         },
         plotBands: [{
           from: 0,
@@ -101,10 +102,10 @@ const fetchAllLocations = async (cont, asset) => {
       },
 
       series: [{
-        name: 'Speed',
+        name: 'cpu_used ',
         data: [0],
         tooltip: {
-          valueSuffix: ' km/h'
+          valueSuffix: ' %'
         }
       }]
 
@@ -128,5 +129,5 @@ const fetchAllLocations = async (cont, asset) => {
   }
 };
 
-fetchAllLocations('container1', 'server1');
-fetchAllLocations('container2', 'pc1');
+makeChart('container1', 'server1', 'Server CPU usage'); 
+makeChart('container2', 'pc1', 'PC CPU usage');
