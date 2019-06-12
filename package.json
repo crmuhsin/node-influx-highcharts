@@ -1,13 +1,13 @@
 {
   "name": "node-influx-sample",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple nodejs, influxdb, highchart's gauge chart app for monitoring",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Muhsin",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -15,5 +15,14 @@
     "influx": "^5.1.0",
     "os": "^0.1.1",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crmuhsin/node-influx-highcharts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crmuhsin/node-influx-highcharts/issues"
+  },
+  "homepage": "https://github.com/crmuhsin/node-influx-highcharts#readme"
 }
