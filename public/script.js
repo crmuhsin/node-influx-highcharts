@@ -130,4 +130,4 @@ const makeChart = async (container, asset, title) => {
 };
 
 makeChart('container1', 'server1', 'Server CPU usage'); 
-makeChart('container2', 'pc1', 'PC CPU usage');
+makeChart('container2', '20181108-090528-EBr3R9i3Q5ciLMN', 'PC CPU usage');
