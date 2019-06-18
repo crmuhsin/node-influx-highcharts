@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.set('port', 3000);
+app.set('port', 5555);
 
 const influx = new Influx.InfluxDB({
   host: '192.168.0.155',
@@ -23,7 +23,7 @@ const influx = new Influx.InfluxDB({
 app.get('/api/v1/:asset', (request, response) => {
   const { asset } = request.params;
   influx.query(`
-    select cpu_used from cpu_usage where assetId = '${asset}' order by desc limit 1
+    select cpu_core, cpu_used, used_ram, total_ram from cpu_usage where assetId = '${asset}' order by desc limit 1
   `)
   .then(result => {
     response.status(200).json(result)
