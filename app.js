@@ -23,7 +23,7 @@ const influx = new Influx.InfluxDB({
 app.get('/api/v1/:asset', (request, response) => {
   const { asset } = request.params;
   influx.query(`
-    select cpu_core, cpu_used, used_ram, total_ram, available_ram from cpu_usage where assetId = '${asset}' order by desc limit 1
+    select cpu_used, cpu_core, ram_total, ram_used, ram_free, ram_avail, disk_total, disk_used, disk_free, disk_percent from cpu_usage where assetId = '${asset}' order by desc limit 1
   `)
   .then(result => {
     response.status(200).json(result)
